@@ -41,10 +41,10 @@ class SendForm {
 		if ($_POST) {
 			$this->takeDataForm();			
 			if (@mail($this->email_to, $this->subject1, $this->body1, $this->headers1)){
-				$this->msg_return = "<div class='msg_success'>Data successfully sent!</div>";
+				$this->msg_return = "<div class='alert alert-success'>Data successfully sent!</div>";
 				
 			} else {
-				$this->msg_return = "<div class='msg_error'>Unfortunately the data could not be sent. Please try again later.</div>";
+				$this->msg_return = "<div class='alert alert-danger'>Unfortunately the data could not be sent. Please try again later.</div>";
 			}
 		}
 	}

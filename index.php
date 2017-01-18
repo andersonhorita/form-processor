@@ -12,14 +12,18 @@ if($validate->dataValidateForm()){
 <!doctype html>
 <html lang="en-us">
 <head>
-<meta charset="utf-8">
-<title>Form Example</title>
+	<title>Form Example</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-<div class="main">	
+<div class="container">	
 	<h1>Form Example</h1>		
-	<form name="form1" id="form1" method="post" >
+	<form name="form1" class="form-horizontal" method="post" >
 	
 	<?php echo isset($validate->msg_error) ? $validate->msg_error : ''; ?>
 	
@@ -30,40 +34,43 @@ if($validate->dataValidateForm()){
 	<?php 
 	else :
 	?>
-	<p>* Required Fields</p>
-	<table border="0" cellpadding="0" cellspacing="0" style="text-align:left">
-	<tr>
-	<td>Name*</td>
-	<td><strong>
-	<input name="name" type="text" class="inputs" id="name" value="<?php echo @$_POST['name']; ?>" />
-	</strong></td>
-	</tr>
-	<tr>
-	<td>Email*</td>
-	<td><input name="email" type="text" class="inputs" id="email" value="<?php echo @$_POST['email']; ?>" /></td>
-	</tr>
-	<tr>
-	<td>Telephone*</td>
-	<td><input name="telephone" type="text" class="inputs" id="telephone" value="<?php echo @$_POST['telephone']; ?>" /></td>
-	</tr>
-	<tr>
-	<td>Company</td>
-	<td><input name="company" type="text" class="inputs" id="company" value="<?php echo @$_POST['company']; ?>" /></td>
-	</tr>
-	<tr>
-	<td>Address</td>
-	<td><input name="address" type="text" class="inputs" id="address" value="<?php echo @$_POST['address']; ?>" /></td>
-	</tr>
-	<tr>
-	<td>Zip Code</td>
-	<td><input name="zipcode" type="text" class="inputs" id="zipcode" size="8" value="<?php echo @$_POST['zipcode']; ?>" /></td>
-	</tr>
-	<tr>
-	<td></td>
-	<td><input type="submit" name="submit" value="Submit" class="button" /></td>
-	</tr>
-	</table>
-	</form>
+		<p>* Required Fields</p>
+		<div class="form-group">
+			<label for="name" class="control-label col-sm-2">Name*</label>
+			<div class="col-sm-10">
+				<input name="name" type="text" class="form-control" value="<?php echo @$_POST['name']; ?>" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="email" class="control-label col-sm-2">Email*</label>
+			<div class="col-sm-10">
+				<input name="email" type="email" class="form-control" value="<?php echo @$_POST['email']; ?>" />
+			</div>			
+		</div>
+		<div class="form-group">
+			<label for="telephone" class="control-label col-sm-2">Telephone*</label>
+			<div class="col-sm-10">
+				<input name="telephone" type="text" class="form-control" value="<?php echo @$_POST['telephone']; ?>" />
+			</div>			
+		</div>
+		<div class="form-group">
+			<label for="company" class="control-label col-sm-2">Company</label>
+			<div class="col-sm-10">
+				<input name="company" type="text" class="form-control" value="<?php echo @$_POST['company']; ?>" />
+			</div>			
+		</div>
+		<div class="form-group">
+			<label for="zip" class="control-label col-sm-2">Zip Code</label>
+			<div class="col-sm-10">
+				<input name="zipcode" type="text" class="form-control" size="8" value="<?php echo @$_POST['zipcode']; ?>" />
+			</div>			
+		</div>			
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<input type="submit" name="submit" value="Submit" class="btn btn-default" />
+			</div>
+		</div>
+	</form>	
 	<?php 
 	endif;
 	?>

@@ -44,12 +44,12 @@ class ValidateForm {
 	}
 	
 	private function addErrorMsgRequired($field){
-		$this->msg_error .= utf8_encode("<div class='msg_error'>The <b>".strtoupper($field)."</b> field is required</div>");
+		$this->msg_error .= utf8_encode("<div class='alert alert-danger'>The <b>".strtoupper($field)."</b> field is required</div>");
 		$this->error = true;
 	}
 	
 	private function addErrorMsgEmail($field){
-		$this->msg_error .= utf8_encode("<div class='msg_error'>The <b>".strtoupper($field)."</b> field must be a valid email address</div>");
+		$this->msg_error .= utf8_encode("<div class='alert alert-danger'>The <b>".strtoupper($field)."</b> field must be a valid email address</div>");
 		$this->error = true;
 	}
 	
